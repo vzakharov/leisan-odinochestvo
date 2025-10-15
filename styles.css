@@ -6,15 +6,15 @@
 }
 
 :root {
-    --color-sand: #E8E3DC;
-    --color-smoke: #C5C3C0;
-    --color-beige: #D4CFC7;
-    --color-blue-soft: #B8C5D6;
-    --color-gray-deep: #8B8985;
-    --color-text-primary: #4A4745;
-    --color-text-secondary: #6B6662;
-    --color-accent: #9BA5B2;
-    --color-white: #FAFAF8;
+    --color-sand: #FFE5D9;
+    --color-smoke: #FFCDB2;
+    --color-beige: #FFB4A2;
+    --color-blue-soft: #E5989B;
+    --color-gray-deep: #B5838D;
+    --color-text-primary: #6D4C41;
+    --color-text-secondary: #8D6E63;
+    --color-accent: #D4717E;
+    --color-white: #FFF8F5;
     
     --font-primary: 'Georgia', 'Times New Roman', serif;
     --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -68,9 +68,9 @@ body {
 
 /* Block 1: Invitation */
 .block-invitation {
-    background: linear-gradient(135deg, var(--color-sand) 0%, var(--color-beige) 100%);
+    background: linear-gradient(135deg, #FFE8D6 0%, #FFB8A0 25%, #F4A5AE 60%, #D891BC 100%);
     background-image: 
-        linear-gradient(135deg, rgba(232, 227, 220, 0.95) 0%, rgba(212, 207, 199, 0.95) 100%),
+        linear-gradient(135deg, rgba(255, 232, 214, 0.9) 0%, rgba(255, 184, 160, 0.9) 25%, rgba(244, 165, 174, 0.9) 60%, rgba(216, 145, 188, 0.85) 100%),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
     min-height: 100vh !important;
 }
