@@ -50,6 +50,12 @@ body {
     padding: 0 var(--spacing-md);
 }
 
+.container-wide {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
 /* Blocks */
 .block {
     min-height: 100vh;
@@ -127,68 +133,106 @@ body {
     line-height: 1.6;
 }
 
-/* Block 2: Presence */
-.block-presence {
-    background: linear-gradient(to bottom, var(--color-beige) 0%, var(--color-blue-soft) 100%);
-}
-
-/* Block 3: Exploration */
-.block-exploration {
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-sand) 100%);
-}
-
-/* Block 4: Themes */
-.block-themes {
-    background-color: var(--color-smoke);
-}
-
-.theme-line {
-    font-size: 1.3rem;
-    margin: var(--spacing-md) 0;
-    color: var(--color-text-primary);
-    font-family: var(--font-secondary);
-}
-
-/* Block 5: Format */
-.block-format {
+/* Block 2-5: About (Combined) */
+.block-about {
     background: linear-gradient(to bottom, var(--color-sand) 0%, var(--color-white) 100%);
     min-height: auto;
 }
 
-.format-grid {
+.about-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    text-align: center;
+    grid-template-columns: 1fr 400px;
+    gap: var(--spacing-xl);
+    align-items: start;
 }
 
-.format-title {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-primary);
-}
-
-.format-details {
-    margin: var(--spacing-md) 0;
-}
-
-.format-item {
-    font-size: 1.2rem;
-    margin: var(--spacing-sm) 0;
+.about-text {
     font-family: var(--font-secondary);
 }
 
-.format-description {
-    margin-top: var(--spacing-md);
-    color: var(--color-text-secondary);
-    font-size: 1rem;
-    line-height: 1.7;
+.about-section {
+    margin-bottom: var(--spacing-lg);
 }
 
-.format-cta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.about-section h3 {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.themes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.themes-list li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.themes-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-deep);
+}
+
+.about-card {
+    position: sticky;
+    top: var(--spacing-md);
+}
+
+.card-inner {
+    background-color: var(--color-white);
+    border-radius: 4px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-inner h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+    text-align: center;
+}
+
+.card-details {
+    margin: var(--spacing-md) 0;
+}
+
+.card-item {
+    font-size: 1.1rem;
+    margin: var(--spacing-sm) 0;
+    font-family: var(--font-secondary);
+    text-align: center;
+}
+
+.card-description {
+    margin: var(--spacing-md) 0;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: var(--font-secondary);
+    text-align: center;
+}
+
+.card-inner .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--spacing-md);
 }
 
 /* Block 6: Facilitators */
@@ -369,11 +413,21 @@ body {
         padding: var(--spacing-lg) 0;
     }
     
-    .container {
+    .container,
+    .container-wide {
         padding: 0 var(--spacing-sm);
     }
     
-    .format-title,
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .about-card {
+        position: relative;
+        top: 0;
+    }
+    
     .section-title {
         font-size: 1.5rem;
     }
@@ -397,8 +451,8 @@ body {
         font-size: 1rem;
     }
     
-    .theme-line {
-        font-size: 1.1rem;
+    .about-section p {
+        font-size: 1rem;
     }
     
     .btn {
