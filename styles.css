@@ -6,15 +6,17 @@
 }
 
 :root {
-    --color-sand: #FFE5D9;
-    --color-smoke: #FFCDB2;
-    --color-beige: #FFB4A2;
-    --color-blue-soft: #E5989B;
-    --color-gray-deep: #B5838D;
-    --color-text-primary: #6D4C41;
-    --color-text-secondary: #8D6E63;
-    --color-accent: #D4717E;
-    --color-white: #FFF8F5;
+    --color-sand: #F5E6D3;
+    --color-smoke: #E8D5C4;
+    --color-beige: #D4C4A8;
+    --color-blue-soft: #C4A484;
+    --color-gray-deep: #8B6F47;
+    --color-text-primary: #5C4A37;
+    --color-text-secondary: #7A6B5A;
+    --color-accent: #B8860B;
+    --color-white: #FDF6E3;
+    --color-golden: #DAA520;
+    --color-amber: #FF8C00;
     
     --font-primary: 'Georgia', 'Times New Roman', serif;
     --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -68,9 +70,9 @@ body {
 
 /* Block 1: Invitation */
 .block-invitation {
-    background: linear-gradient(135deg, #FFE8D6 0%, #FFB8A0 25%, #F4A5AE 60%, #D891BC 100%);
+    background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 25%, #D4C4A8 60%, #C4A484 100%);
     background-image: 
-        linear-gradient(135deg, rgba(255, 232, 214, 0.9) 0%, rgba(255, 184, 160, 0.9) 25%, rgba(244, 165, 174, 0.9) 60%, rgba(216, 145, 188, 0.85) 100%),
+        linear-gradient(135deg, rgba(245, 230, 211, 0.9) 0%, rgba(232, 213, 196, 0.9) 25%, rgba(212, 196, 168, 0.9) 60%, rgba(196, 164, 132, 0.85) 100%),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
     min-height: 100vh !important;
 }
@@ -135,7 +137,12 @@ body {
 
 /* Block 2-5: About (Combined) */
 .block-about {
-    background: linear-gradient(to bottom, var(--color-sand) 0%, var(--color-white) 100%);
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+        url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     min-height: auto;
 }
 
@@ -147,26 +154,28 @@ body {
 }
 
 .about-text {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
+    color: var(--color-white);
 }
 
 .about-section {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .about-section h3 {
     font-family: var(--font-primary);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-sm);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
 }
 
 .about-section p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
 }
 
 .themes-list {
@@ -175,18 +184,19 @@ body {
 }
 
 .themes-list li {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
     padding-left: 1.2rem;
     position: relative;
+    font-family: var(--font-primary);
 }
 
 .themes-list li::before {
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--color-gray-deep);
+    color: var(--color-golden);
 }
 
 .about-card {
@@ -195,17 +205,19 @@ body {
 }
 
 .card-inner {
-    background-color: var(--color-white);
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
     padding: var(--spacing-lg);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .card-inner h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: var(--spacing-md);
     color: var(--color-text-primary);
     text-align: center;
+    font-family: var(--font-primary);
 }
 
 .card-details {
@@ -213,18 +225,18 @@ body {
 }
 
 .card-item {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: var(--spacing-sm) 0;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     text-align: center;
 }
 
 .card-description {
     margin: var(--spacing-md) 0;
     color: var(--color-text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: var(--font-primary);
     text-align: center;
 }
 
