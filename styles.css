@@ -25,9 +25,9 @@
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
     
-    --transition-slow: 1.2s ease;
-    --transition-medium: 0.8s ease;
-    --transition-fast: 0.4s ease;
+    --transition-slow: 2.5s ease;
+    --transition-medium: 1.5s ease;
+    --transition-fast: 0.8s ease;
 }
 
 html {
