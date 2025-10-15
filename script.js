@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     checkResetFlag();
     initAnimations();
-    initSlowScroll();
 });
 
 function checkResetFlag() {
@@ -75,62 +74,4 @@ function animateSection(section) {
             }, maxDelay + 500);
         }
     }
-}
-
-function initSlowScroll() {
-    let isScrolling = false;
-    let scrollTimeout;
-    
-    const smoothScrollSpeed = 0.7;
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const startPosition = window.pageYOffset;
-                const distance = targetPosition - startPosition;
-                const duration = Math.abs(distance) * smoothScrollSpeed;
-                
-                let start = null;
-                
-                function animation(currentTime) {
-                    if (start === null) start = currentTime;
-                    const timeElapsed = currentTime - start;
-                    const progress = Math.min(timeElapsed / duration, 1);
-                    
-                    const ease = easeInOutCubic(progress);
-                    window.scrollTo(0, startPosition + (distance * ease));
-                    
-                    if (timeElapsed < duration) {
-                        requestAnimationFrame(animation);
-                    }
-                }
-                
-                requestAnimationFrame(animation);
-            }
-        });
-    });
-    
-    window.addEventListener('wheel', function(e) {
-        if (!isScrolling) {
-            isScrolling = true;
-        }
-        
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            isScrolling = false;
-        }, 150);
-    }, { passive: true });
-}
-
-function easeInOutCubic(t) {
-    return t < 0.5 
-        ? 4 * t * t * t 
-        : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }

@@ -147,6 +147,16 @@ body {
     line-height: 1.6;
 }
 
+.scroll-arrow {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.scroll-arrow:hover {
+    opacity: 0.7;
+}
+
 /* Block 2-5: About (Combined) */
 .block-about {
     position: relative;
