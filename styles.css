@@ -137,13 +137,25 @@ body {
 
 /* Block 2-5: About (Combined) */
 .block-about {
+    position: relative;
+    min-height: auto;
+}
+
+.block-about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
         url('images/background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: auto;
+    transform: scaleX(-1);
+    z-index: -1;
 }
 
 .about-grid {
