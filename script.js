@@ -134,15 +134,3 @@ function easeInOutCubic(t) {
         ? 4 * t * t * t 
         : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
-
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const parallaxSections = document.querySelectorAll('.block-invitation, .block-presence');
-    
-    parallaxSections.forEach(section => {
-        const speed = 0.5;
-        const yPos = -(scrolled * speed);
-        section.style.transform = `translateY(${yPos}px)`;
-    });
-}, { passive: true });
-

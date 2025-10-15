@@ -6,17 +6,29 @@
 }
 
 :root {
-    --color-sand: #F5E6D3;
-    --color-smoke: #E8D5C4;
-    --color-beige: #D4C4A8;
-    --color-blue-soft: #C4A484;
-    --color-gray-deep: #8B6F47;
-    --color-text-primary: #5C4A37;
-    --color-text-secondary: #7A6B5A;
-    --color-accent: #B8860B;
-    --color-white: #FDF6E3;
-    --color-golden: #DAA520;
-    --color-amber: #FF8C00;
+    /* Muted sunset gradient colors - more sophisticated and subtle */
+    --color-sky-deep: #2c3e50;        /* Muted deep blue-gray */
+    --color-sky-medium: #4a6b7a;      /* Soft medium blue */
+    --color-sky-pale: #a8c8d8;         /* Gentle pale blue */
+    --color-sunset-yellow: #e6d7a3;    /* Soft golden beige */
+    --color-sunset-orange: #d4a574;    /* Muted warm orange */
+    --color-sunset-red: #c49b7b;       /* Soft orange-brown */
+    --color-horizon: #b8956a;          /* Gentle warm brown */
+    
+    /* Text and UI colors */
+    --color-text-primary: #2c3e50;    /* Dark blue-gray for text */
+    --color-text-secondary: #5a6c7d;  /* Medium blue-gray */
+    --color-white: #ffffff;
+    --color-accent: #7ba7c7;           /* Lighter blue accent color */
+    --color-accent-hover: #5a8db3;     /* Medium blue for hover states */
+    --color-golden: #e6d7a3;           /* Soft golden beige */
+    --color-amber: #d4a574;            /* Muted amber */
+    
+    /* Background variations */
+    --color-sand: #f5f2e8;            /* Very light warm beige */
+    --color-smoke: #e8e4d8;           /* Light warm gray */
+    --color-beige: #d4c4a8;           /* Warm beige */
+    --color-gray-deep: #4a5568;        /* Deep blue-gray */
     
     --font-primary: 'Georgia', 'Times New Roman', serif;
     --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -70,11 +82,11 @@ body {
 
 /* Block 1: Invitation */
 .block-invitation {
-    background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 25%, #D4C4A8 60%, #C4A484 100%);
+    background: linear-gradient(135deg, var(--color-sky-deep) 0%, var(--color-sky-medium) 25%, var(--color-sky-pale) 60%, var(--color-sunset-yellow) 100%);
     background-image: 
-        linear-gradient(135deg, rgba(245, 230, 211, 0.9) 0%, rgba(232, 213, 196, 0.9) 25%, rgba(212, 196, 168, 0.9) 60%, rgba(196, 164, 132, 0.85) 100%),
+        linear-gradient(135deg, var(--color-sky-deep) 0%, var(--color-sky-medium) 25%, var(--color-sky-pale) 60%, var(--color-sunset-yellow) 100%),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
-    min-height: 100vh !important;
+    min-height: 100vh;
 }
 
 .text-breathe {
@@ -150,11 +162,10 @@ body {
     height: 100%;
     background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-        url('images/background.png');
+        url('images/background-new.png');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    transform: scaleX(-1);
+    background-position: right top;
+    background-attachment: scroll;
     z-index: -1;
 }
 
@@ -172,6 +183,10 @@ body {
 
 .about-section {
     margin-bottom: var(--spacing-md);
+}
+
+.about-section h2 {
+    margin-bottom: var(--spacing-sm);
 }
 
 .about-section h3 {
@@ -208,7 +223,7 @@ body {
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--color-golden);
+    color: var(--color-accent);
 }
 
 .about-card {
@@ -289,7 +304,7 @@ body {
     margin: 0 auto var(--spacing-md);
     border-radius: 50%;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-smoke) 100%);
+    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-gray-deep) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,7 +331,7 @@ body {
 
 /* Block 7: Contact */
 .block-contact {
-    background: linear-gradient(to bottom, var(--color-beige) 0%, var(--color-gray-deep) 100%);
+    background: linear-gradient(to bottom, var(--color-sand) 0%, var(--color-beige) 50%, var(--color-gray-deep) 100%);
     min-height: auto;
 }
 
@@ -381,7 +396,7 @@ body {
 
 /* Block 8: Echo */
 .block-echo {
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-sand) 100%);
+    background: linear-gradient(135deg, var(--color-sky-pale) 0%, var(--color-sunset-yellow) 50%, var(--color-sunset-orange) 100%);
 }
 
 /* Buttons */
@@ -403,18 +418,18 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: var(--color-gray-deep);
+    background-color: var(--color-accent-hover);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
     background-color: transparent;
     color: var(--color-text-primary);
-    border: 2px solid var(--color-text-primary);
+    border: 2px solid var(--color-accent);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-text-primary);
+    background-color: var(--color-accent);
     color: var(--color-white);
 }
 
@@ -440,6 +455,10 @@ body {
     .container,
     .container-wide {
         padding: 0 var(--spacing-sm);
+    }
+
+    .block-about::before {
+        background-position: center top;
     }
     
     .about-grid {
