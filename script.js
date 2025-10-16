@@ -148,7 +148,7 @@ function startFloatingCycle(img, section, isMobile) {
             const fadeOutDuration = isMobile ? 2000 : 3000;
             
             img.style.transition = `opacity ${fadeInDuration}ms ease-in-out, transform ${cycleDuration}ms ease-in-out`;
-            img.style.opacity = isMobile ? '0.25' : '0.35';
+            img.style.opacity = isMobile ? '0.4' : '0.5';
             img.style.transform = `translate(${endX - startX}px, ${endY - startY}px)`;
             
             setTimeout(() => {

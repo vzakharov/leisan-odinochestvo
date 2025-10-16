@@ -553,7 +553,7 @@ p {
     }
     
     .block {
-        min-height: auto;
+        /* min-height: auto; */
         padding: var(--spacing-lg) 0;
     }
     
@@ -598,8 +598,7 @@ p {
     
     .floating-image {
         width: 220px;
-    }
-}
+    }}
 
 @media (max-width: 480px) {
     h2 {
@@ -611,7 +610,7 @@ p {
     }
     
     .line {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
     }
     
     .welcome-text {
