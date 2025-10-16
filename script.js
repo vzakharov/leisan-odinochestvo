@@ -140,7 +140,7 @@ function startFloatingCycle(img, section, isMobile) {
         img.style.top = startY + 'px';
         img.style.transform = 'translate(0, 0)';
         img.style.transition = 'none';
-        img.style.opacity = '0';
+        img.classList.remove('visible');
         
         setTimeout(() => {
             const cycleDuration = isMobile ? 8000 : 12000;
@@ -148,12 +148,12 @@ function startFloatingCycle(img, section, isMobile) {
             const fadeOutDuration = isMobile ? 2000 : 3000;
             
             img.style.transition = `opacity ${fadeInDuration}ms ease-in-out, transform ${cycleDuration}ms ease-in-out`;
-            img.style.opacity = isMobile ? '0.4' : '0.5';
+            img.classList.add('visible');
             img.style.transform = `translate(${endX - startX}px, ${endY - startY}px)`;
             
             setTimeout(() => {
                 img.style.transition = `opacity ${fadeOutDuration}ms ease-in-out`;
-                img.style.opacity = '0';
+                img.classList.remove('visible');
             }, cycleDuration - fadeOutDuration);
             
             const totalCycleTime = cycleDuration + (isMobile ? 3000 : 5000);

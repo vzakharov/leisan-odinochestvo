@@ -498,6 +498,10 @@ p {
     will-change: transform, opacity;
 }
 
+.floating-image.visible {
+    opacity: 1;
+}
+
 /* Block 8: Echo */
 .block-echo {
     background: linear-gradient(135deg, var(--color-sky-pale) 0%, var(--color-sunset-yellow) 50%, var(--color-sunset-orange) 100%);
@@ -598,7 +602,8 @@ p {
     
     .floating-image {
         width: 220px;
-    }}
+    }
+}
 
 @media (max-width: 480px) {
     h2 {
