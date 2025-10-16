@@ -100,14 +100,36 @@ function animateFloatingImage(img, index, section) {
 function startFloatingCycle(img, section, isMobile) {
     function cycle() {
         const sectionRect = section.getBoundingClientRect();
-        const imgWidth = isMobile ? 220 : 450;
+        const imgWidth = isMobile ? 220 : 360;
         const imgHeight = imgWidth * 0.67;
         
         const maxX = sectionRect.width - imgWidth;
         const maxY = sectionRect.height - imgHeight;
         
-        const startX = Math.random() * maxX;
-        const startY = Math.random() * maxY;
+        // Create edge bias - 90% chance to appear in outer 25% of space
+        const edgeZone = 0.2; // 20% from edges
+        let startX, startY;
+        
+        if (Math.random() < 0.9) {
+            // Appear near edges
+            if (Math.random() < 0.8) {
+                // Left or right edge
+                startX = Math.random() < 0.5 ? 
+                    Math.random() * (maxX * edgeZone) : 
+                    maxX - Math.random() * (maxX * edgeZone);
+                startY = Math.random() * maxY;
+            } else {
+                // Top or bottom edge
+                startX = Math.random() * maxX;
+                startY = Math.random() < 0.5 ? 
+                    Math.random() * (maxY * edgeZone) : 
+                    maxY - Math.random() * (maxY * edgeZone);
+            }
+        } else {
+            // 10% chance to appear anywhere
+            startX = Math.random() * maxX;
+            startY = Math.random() * maxY;
+        }
         
         const moveDistance = isMobile ? 30 : 60;
         const moveAngle = Math.random() * Math.PI * 2;
