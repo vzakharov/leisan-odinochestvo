@@ -265,7 +265,7 @@ p {
 }
 
 .card-item {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     margin: 0.8rem 0;
     font-family: var(--font-primary);
     text-align: center;
@@ -353,7 +353,7 @@ p {
 /* Block 7: Topics */
 .block-topics {
     position: relative;
-    min-height: auto;
+    min-height: 100vh;
     background: linear-gradient(135deg, #6B4E71 0%, #8B6F8F 30%, #B395AB 60%, #D9C5D8 100%);
 }
 
@@ -369,25 +369,33 @@ p {
     color: var(--color-white);
 }
 
-.contact-section {
+.contact-text h2 {
     margin-bottom: var(--spacing-lg);
-}
-
-.contact-section h2 {
-    margin-bottom: var(--spacing-md);
     color: var(--color-white);
 }
 
-.contact-section h3 {
-    color: var(--color-white);
-    margin-top: var(--spacing-md);
+.topics-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.contact-section p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
+.topics-list li {
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--color-white);
+    padding: var(--spacing-sm) 0;
+    padding-left: 1.5rem;
+    position: relative;
     font-family: var(--font-primary);
+}
+
+.topics-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .contact-card {
@@ -561,9 +569,12 @@ p {
         font-size: 1rem;
     }
     
-    .about-section p,
-    .contact-section p {
+    .about-section p {
         font-size: 1rem;
+    }
+    
+    .topics-list li {
+        font-size: 1.15rem;
     }
     
     .btn {
