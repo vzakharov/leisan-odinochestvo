@@ -100,11 +100,46 @@ p {
     position: relative;
 }
 
+.block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.3) 20%, 
+        rgba(255, 255, 255, 0.5) 50%, 
+        rgba(255, 255, 255, 0.3) 80%, 
+        transparent 100%);
+    opacity: 0.6;
+}
+
+.block::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, 
+        rgba(0, 0, 0, 0.08) 0%, 
+        transparent 100%);
+    pointer-events: none;
+}
+
+.block:first-child::before,
+.block:first-child::after {
+    display: none;
+}
+
 /* Block 1: Invitation */
 .block-invitation {
-    background: linear-gradient(135deg, var(--color-sky-deep) 0%, var(--color-sky-medium) 25%, var(--color-sky-pale) 60%, var(--color-sunset-yellow) 100%);
+    background: linear-gradient(180deg, #d4b8b8 0%, #d4b8b8 70%, #c4a0a0 100%);
     background-image: 
-        linear-gradient(135deg, var(--color-sky-deep) 0%, var(--color-sky-medium) 25%, var(--color-sky-pale) 60%, var(--color-sunset-yellow) 100%),
+        linear-gradient(180deg, #d4b8b8 0%, #d4b8b8 70%, #c4a0a0 100%),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
     min-height: 100vh;
 }
@@ -181,7 +216,7 @@ p {
 .block-about {
     position: relative;
     min-height: auto;
-    background: linear-gradient(165deg, #A68B6F 0%, #C4A888 30%, #D9C4A8 60%, #EFE4D4 100%);
+    background: linear-gradient(180deg, #c4a0a0 0%, #c4a0a0 30%, #b48890 100%);
 }
 
 .about-grid {
@@ -193,7 +228,7 @@ p {
 
 .about-text {
     font-family: var(--font-primary);
-    color: #3A2F28;
+    color: #2c1a28;
 }
 
 .about-section {
@@ -202,18 +237,18 @@ p {
 
 .about-section h2 {
     margin-bottom: var(--spacing-md);
-    color: #3A2F28;
+    color: #2c1a28;
 }
 
 .about-section h3 {
-    color: #3A2F28;
+    color: #2c1a28;
 }
 
 
 .about-section p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: rgba(58, 47, 40, 0.85);
+    color: rgba(44, 26, 40, 0.9);
     font-family: var(--font-primary);
 }
 
@@ -244,10 +279,10 @@ p {
 }
 
 .card-inner {
-    background: linear-gradient(225deg, #F8F6F4 0%, #F0EDE8 30%, #E8E4D8 60%, #E0DCC8 100%);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
     padding: var(--spacing-lg);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
 }
 
@@ -290,7 +325,7 @@ p {
 
 /* Block 6: Facilitators */
 .block-facilitators {
-    background: linear-gradient(225deg, #F8F6F4 0%, #F0EDE8 30%, #E8E4D8 60%, #E0DCC8 100%);
+    background: linear-gradient(180deg, #607880 0%, #607880 30%, #506870 70%, #405860 100%);
     min-height: 100vh;
 }
 
@@ -304,7 +339,7 @@ p {
 }
 
 .block-facilitators .section-title {
-    color: var(--color-text-primary);
+    color: var(--color-white);
 }
 
 .facilitators-grid {
@@ -324,7 +359,7 @@ p {
     margin: 0 auto var(--spacing-md);
     border-radius: 50%;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-gray-deep) 100%);
+    background: linear-gradient(135deg, #4d8a96 0%, #2d5a66 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -340,13 +375,13 @@ p {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: var(--spacing-md);
-    color: var(--color-text-primary);
+    color: var(--color-white);
 }
 
 .facilitator-bio {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     font-family: var(--font-primary);
 }
 
@@ -354,7 +389,7 @@ p {
 .block-topics {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, #9B6B7B 0%, #B8808F 30%, #D4A0AF 60%, #E8C4CF 100%);
+    background: linear-gradient(180deg, #888898 0%, #808488 30%, #788890 70%, #607880 100%);
 }
 
 .contact-grid {
@@ -455,7 +490,7 @@ p {
 
 /* Block 7.5: Contemplation */
 .block-contemplation {
-    background: linear-gradient(180deg, #7A6A7A 0%, #665876 30%, #4E4062 60%, #3A2E4A 100%);
+    background: linear-gradient(180deg, #b48890 0%, #b48890 20%, #a08898 60%, #888898 100%);
     min-height: 100vh;
     overflow: hidden;
 }
@@ -466,11 +501,11 @@ p {
 }
 
 .block-contemplation .text-breathe {
-    color: var(--color-white);
+    color: #2c1a28;
 }
 
 .block-contemplation .line {
-    color: var(--color-white);
+    color: #2c1a28;
 }
 
 .line-after-break {
@@ -504,7 +539,15 @@ p {
 
 /* Block 8: Echo */
 .block-echo {
-    background: linear-gradient(135deg, var(--color-sky-pale) 0%, var(--color-sunset-yellow) 50%, var(--color-sunset-orange) 100%);
+    background: linear-gradient(180deg, #405860 0%, #405860 30%, #304850 70%, #203840 100%);
+}
+
+.block-echo .text-breathe {
+    color: var(--color-white);
+}
+
+.block-echo .line {
+    color: var(--color-white);
 }
 
 /* Buttons */
