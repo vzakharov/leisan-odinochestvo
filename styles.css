@@ -397,6 +397,11 @@ p {
     color: var(--color-text-primary);
 }
 
+.facilitator-name strong {
+    font-size: 1.2rem;
+    color: var(--color-brand);
+}
+
 .facilitator-bio {
     font-size: 1.05rem;
     line-height: 1.7;
@@ -420,36 +425,47 @@ p {
     color: var(--color-text-primary);
 }
 
+.topics-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
 .topics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
 }
 
-.topic-card {
+.card.topic-card {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
-.topic-card .card-title {
-    font-size: 1.3rem;
+.topic-card p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--color-text-light);
 }
 
-.topic-card .card-description {
-    font-size: 0.95rem;
+.topic-card strong {
+    color: var(--color-brand);
+    font-weight: 600;
 }
 
-.pricing-section {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--spacing-xl);
+.topic-card-wide {
+    grid-column: span 2;
+}
+
+.pricing-sidebar {
+    position: sticky;
+    top: var(--spacing-md);
 }
 
 .pricing-card {
-    max-width: 500px;
     text-align: center;
 }
 
@@ -505,9 +521,9 @@ p {
 
 .contemplation-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 0;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .contemplation-carousel {
@@ -516,16 +532,15 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: var(--spacing-lg);
+    justify-content: space-between;
+    padding: 0;
 }
 
 .carousel-images {
     position: relative;
     width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1;
-    border-radius: 8px;
+    height: 100%;
+    flex: 1;
     overflow: hidden;
 }
 
@@ -547,7 +562,8 @@ p {
 .carousel-dots {
     display: flex;
     gap: 12px;
-    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-soft);
 }
 
 .dot {
@@ -721,6 +737,14 @@ p {
 }
 
 /* Responsive Design */
+
+@media (max-width: 960px) {
+    .topics-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 16px;
@@ -784,8 +808,13 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .pricing-card {
-        max-width: 100%;
+    .topic-card-wide {
+        grid-column: span 1;
+    }
+
+    .pricing-sidebar {
+        position: relative;
+        top: 0;
     }
     
     .section-title {
@@ -827,11 +856,7 @@ p {
         font-size: 1rem;
     }
 
-    .topic-card .card-title {
-        font-size: 1.1rem;
-    }
-
-    .topic-card .card-description {
+    .topic-card p {
         font-size: 0.9rem;
     }
 
