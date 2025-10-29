@@ -1,7 +1,10 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
-/* Reset and Base Styles */
+/* ========================================
+   1. RESET & BASE STYLES
+   ======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -71,6 +74,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Typography */
 h2 {
     font-family: var(--font-primary);
     font-size: 2.5rem;
@@ -91,7 +95,10 @@ p {
     margin-bottom: 1.2rem;
 }
 
-/* Container */
+/* ========================================
+   2. LAYOUT CONTAINERS
+   ======================================== */
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -104,7 +111,162 @@ p {
     padding: 0 var(--spacing-md);
 }
 
-/* Blocks */
+/* ========================================
+   3. BASE COMPONENTS
+   ======================================== */
+
+/* Card System - Base */
+.card {
+    background: var(--color-card-bg);
+    border-radius: 16px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 16px var(--color-card-shadow);
+    transition: all var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-compact {
+    padding: var(--spacing-md);
+}
+
+.card-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-brand);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.card-inner {
+    text-align: center;
+}
+
+.card-inner h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+    text-align: center;
+    font-family: var(--font-primary);
+    font-weight: 600;
+}
+
+.card-inner .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+
+.card-details {
+    margin: var(--spacing-md) 0;
+}
+
+.card-item {
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+    font-family: var(--font-primary);
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Badge System */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(199, 122, 54, 0.1);
+    border: 1px solid var(--color-stroke);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-brand);
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-brand);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Button System */
+.btn {
+    display: inline-block;
+    padding: 1.1rem 2.5rem;
+    font-family: var(--font-primary);
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-brand);
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-brand-hover);
+    transform: translateY(-1px);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid var(--color-brand-light);
+    outline-offset: 2px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-brand);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-brand);
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   4. BLOCK BASE STYLES
+   ======================================== */
+
 .block {
     min-height: 100vh;
     display: flex;
@@ -122,11 +284,11 @@ p {
     transform: translateX(-50%);
     width: 60%;
     height: 1px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(255, 255, 255, 0.3) 20%, 
-        rgba(255, 255, 255, 0.5) 50%, 
-        rgba(255, 255, 255, 0.3) 80%, 
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 20%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.3) 80%,
         transparent 100%);
     opacity: 0.6;
 }
@@ -138,8 +300,8 @@ p {
     left: 0;
     right: 0;
     height: 80px;
-    background: linear-gradient(180deg, 
-        rgba(0, 0, 0, 0.08) 0%, 
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.08) 0%,
         transparent 100%);
     pointer-events: none;
 }
@@ -148,6 +310,10 @@ p {
 .block:first-child::after {
     display: none;
 }
+
+/* ========================================
+   5. SPECIFIC BLOCKS (In Page Order)
+   ======================================== */
 
 /* Block 1: Invitation */
 .block-invitation {
@@ -195,6 +361,10 @@ p {
     font-weight: 500;
 }
 
+.line-after-break {
+    margin-top: var(--spacing-md);
+}
+
 .welcome {
     margin-top: var(--spacing-lg);
     text-align: center;
@@ -230,7 +400,7 @@ p {
     opacity: 0.7;
 }
 
-/* Block 2-5: About (Combined) */
+/* Block 2: About */
 .block-about {
     position: relative;
     min-height: auto;
@@ -298,54 +468,118 @@ p {
     top: var(--spacing-md);
 }
 
-.card-inner {
-    text-align: center;
-}
-
-.card-inner h2 {
-    font-size: 1.8rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-primary);
-    text-align: center;
-    font-family: var(--font-primary);
-    font-weight: 600;
-}
-
-.card-details {
-    margin: var(--spacing-md) 0;
-}
-
-.card-item {
-    font-size: 0.9rem;
-    margin: 0.8rem 0;
-    font-family: var(--font-primary);
-    text-align: center;
-    line-height: 1.6;
-}
-
-.card-description {
-    margin: var(--spacing-md) 0;
-    color: var(--color-text-secondary);
-    font-size: 1rem;
-    line-height: 1.6;
-    font-family: var(--font-primary);
-    text-align: center;
-}
-
-.card-inner .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: var(--spacing-md);
-}
-
-/* Block 6: Facilitators */
-.block-facilitators {
+/* Block 3: Contemplation */
+.block-contemplation {
     background: linear-gradient(180deg,
-        var(--color-sky-blue) 0%,
-        var(--color-dusk-lavender) 50%,
-        var(--color-dusk-periwinkle) 100%);
+        var(--color-golden-hour) 0%,
+        #ffd9b3 30%,
+        var(--color-sunrise-peach) 70%,
+        var(--color-sunrise-coral) 100%);
     min-height: 100vh;
+    overflow: hidden;
+}
+
+.contemplation-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.contemplation-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    min-height: 600px;
+}
+
+.contemplation-carousel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 16px 0 0 16px;
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.contemplation-text {
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+}
+
+.block-contemplation .text-breathe {
+    color: var(--color-text-primary);
+}
+
+.block-contemplation .line {
+    color: var(--color-text-primary);
+    text-shadow: none;
+    font-size: 1.2rem;
+}
+
+/* Block 4: Topics */
+.block-topics {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(180deg,
+        var(--color-golden-hour) 0%,
+        #ffe4b3 50%,
+        var(--color-sky-blue) 100%);
 }
 
 .section-title {
@@ -355,68 +589,6 @@ p {
     margin-bottom: var(--spacing-lg);
     color: var(--color-text-primary);
     line-height: 1.3;
-}
-
-.block-facilitators .section-title {
-    color: var(--color-text-primary);
-}
-
-.facilitators-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-}
-
-.facilitator {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.facilitator-photo {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto var(--spacing-md);
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.facilitator-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.facilitator-name {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-primary);
-}
-
-.facilitator-name strong {
-    font-size: 1.2rem;
-    color: var(--color-brand);
-}
-
-.facilitator-bio {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--color-text-light);
-    font-family: var(--font-primary);
-}
-
-/* Block 7: Topics */
-.block-topics {
-    position: relative;
-    min-height: 100vh;
-    background: linear-gradient(180deg,
-        var(--color-golden-hour) 0%,
-        #ffe4b3 50%,
-        var(--color-sky-blue) 100%);
 }
 
 .block-topics .section-title {
@@ -438,7 +610,7 @@ p {
     gap: var(--spacing-sm);
 }
 
-.card.topic-card {
+.topic-card {
     text-align: center;
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -501,110 +673,68 @@ p {
     font-size: 1.3rem;
 }
 
-/* Block 7.5: Contemplation */
-.block-contemplation {
+/* Block 5: Facilitators */
+.block-facilitators {
     background: linear-gradient(180deg,
-        var(--color-golden-hour) 0%,
-        #ffd9b3 30%,
-        var(--color-sunrise-peach) 70%,
-        var(--color-sunrise-coral) 100%);
+        var(--color-sky-blue) 0%,
+        var(--color-dusk-lavender) 50%,
+        var(--color-dusk-periwinkle) 100%);
     min-height: 100vh;
-    overflow: hidden;
 }
 
-.contemplation-card {
-    background: var(--color-card-bg);
-    border-radius: 16px;
-    padding: 0;
-    overflow: hidden;
+.block-facilitators .section-title {
+    color: var(--color-text-primary);
 }
 
-.contemplation-grid {
+.facilitators-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 0;
-    min-height: 600px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
-.contemplation-carousel {
-    position: relative;
-    background: var(--color-bg-soft);
+.facilitator {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0;
 }
 
-.carousel-images {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    flex: 1;
+.facilitator-photo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto var(--spacing-md);
+    border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-.carousel-image {
-    position: absolute;
-    top: 0;
-    left: 0;
+.facilitator-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
-.carousel-image.active {
-    opacity: 1;
-}
-
-.carousel-dots {
-    display: flex;
-    gap: 12px;
-    padding: var(--spacing-md);
-    background: var(--color-bg-soft);
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.dot.active {
-    background: var(--color-brand);
-    transform: scale(1.2);
-}
-
-.dot:hover {
-    background: var(--color-brand-light);
-}
-
-.contemplation-text {
-    padding: var(--spacing-lg);
-    display: flex;
-    align-items: center;
-}
-
-.block-contemplation .text-breathe {
+.facilitator-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
     color: var(--color-text-primary);
 }
 
-.block-contemplation .line {
-    color: var(--color-text-primary);
-    text-shadow: none;
+.facilitator-name strong {
     font-size: 1.2rem;
+    color: var(--color-brand);
 }
 
-.line-after-break {
-    margin-top: var(--spacing-md);
+.facilitator-bio {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-light);
+    font-family: var(--font-primary);
 }
 
-/* Block 8: Echo */
+/* Block 6: Echo */
 .block-echo {
     background: linear-gradient(180deg,
         var(--color-dusk-periwinkle) 0%,
@@ -620,123 +750,9 @@ p {
     color: var(--color-text-primary);
 }
 
-/* Card Components */
-.card {
-    background: var(--color-card-bg);
-    border-radius: 16px;
-    padding: var(--spacing-lg);
-    box-shadow: 0 4px 16px var(--color-card-shadow);
-    transition: all var(--transition-fast);
-}
-
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.card-compact {
-    padding: var(--spacing-md);
-}
-
-.card-header {
-    margin-bottom: var(--spacing-md);
-}
-
-.card-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-brand);
-}
-
-.card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-text-primary);
-}
-
-.card-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--color-text-secondary);
-}
-
-/* Badge Component */
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(199, 122, 54, 0.1);
-    border: 1px solid var(--color-stroke);
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-brand);
-}
-
-.badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-brand);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 1.1rem 2.5rem;
-    font-family: var(--font-primary);
-    font-size: 1.15rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: all var(--transition-fast);
-    cursor: pointer;
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--color-brand);
-    color: white;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
-}
-
-.btn-primary:hover {
-    background-color: var(--color-brand-hover);
-    transform: translateY(-1px);
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-primary:focus-visible {
-    outline: 2px solid var(--color-brand-light);
-    outline-offset: 2px;
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--color-text-primary);
-    border: 2px solid var(--color-brand);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-brand);
-    color: white;
-    transform: translateY(-1px);
-}
-
-/* Responsive Design */
+/* ========================================
+   6. RESPONSIVE DESIGN
+   ======================================== */
 
 @media (max-width: 960px) {
     .topics-layout {
@@ -749,7 +765,7 @@ p {
     body {
         font-size: 16px;
     }
-    
+
     .line {
         font-size: 1.2rem;
     }
@@ -761,23 +777,21 @@ p {
     .line.emphasis {
         font-size: 1.3rem;
     }
-    
+
     .block {
-        /* min-height: auto; */
         padding: var(--spacing-lg) 0;
     }
-    
+
     .container,
     .container-wide {
         padding: 0 var(--spacing-sm);
     }
 
-    
     .about-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
-    
+
     .about-card {
         position: relative;
         top: 0;
@@ -816,15 +830,15 @@ p {
         position: relative;
         top: 0;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .facilitators-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .facilitator-photo {
         width: 150px;
         height: 150px;
@@ -835,11 +849,11 @@ p {
     h2 {
         font-size: 1.8rem;
     }
-    
+
     h3 {
         font-size: 1.3rem;
     }
-    
+
     .line {
         font-size: 0.8rem;
     }
@@ -851,7 +865,7 @@ p {
     .welcome-text {
         font-size: 1rem;
     }
-    
+
     .about-section p {
         font-size: 1rem;
     }
@@ -875,15 +889,13 @@ p {
     }
 }
 
-/* Smooth scroll animation */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
-    
+
     .line,
     .welcome {
         transition: none;
     }
 }
-

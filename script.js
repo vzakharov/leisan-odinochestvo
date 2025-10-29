@@ -84,7 +84,7 @@ function initCarousel() {
     if (!images.length || !dots.length) return;
 
     let currentIndex = 0;
-    const intervalTime = 4000; // Change image every 4 seconds
+    const intervalTime = 6000;
 
     function showImage(index) {
         images.forEach((img, i) => {
