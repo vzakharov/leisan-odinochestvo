@@ -343,7 +343,7 @@ p {
 }
 
 .block-invitation .line {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 }
 
 .line.spacing-top {
@@ -412,7 +412,7 @@ p {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 320px;
     gap: var(--spacing-xl);
     align-items: start;
 }
@@ -436,7 +436,7 @@ p {
 }
 
 .about-section p {
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     line-height: 1.7;
     color: var(--color-text-light);
     font-family: var(--font-primary);
@@ -466,6 +466,15 @@ p {
 .about-card {
     position: sticky;
     top: var(--spacing-md);
+}
+
+.about-card .card {
+    padding: 3rem;
+}
+
+.about-card .card-description {
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
 }
 
 /* Block 3: Contemplation */
@@ -577,7 +586,7 @@ p {
     position: relative;
     min-height: 100vh;
     background: linear-gradient(180deg,
-        var(--color-golden-hour) 0%,
+        #ffb5a0 0%,
         #ffe4b3 50%,
         var(--color-sky-blue) 100%);
 }
@@ -612,12 +621,11 @@ p {
 
 .topic-card {
     text-align: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 2rem;
 }
 
 .topic-card p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     line-height: 1.5;
     margin: 0;
     color: var(--color-text-light);
@@ -747,6 +755,7 @@ p {
 
 .block-echo .line {
     color: var(--color-text-primary);
+    font-size: 2.2rem;
 }
 
 /* ========================================
