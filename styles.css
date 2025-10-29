@@ -650,7 +650,7 @@ p {
 }
 
 .pricing-card p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .pricing-card .badge {
@@ -668,7 +668,7 @@ p {
 
 .price-item {
     font-size: 1.05rem;
-    margin: 0.8rem 0;
+    margin: 0;
     font-family: var(--font-primary);
     text-align: center;
     line-height: 1.6;
