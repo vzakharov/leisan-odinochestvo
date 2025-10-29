@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     checkResetFlag();
     initAnimations();
-    initFloatingImages();
+    initCarousel();
 });
 
 function checkResetFlag() {
@@ -77,91 +77,40 @@ function animateSection(section) {
     }
 }
 
-function initFloatingImages() {
-    const images = document.querySelectorAll('.floating-image');
-    const contemplationSection = document.querySelector('.block-contemplation');
-    
-    if (!images.length || !contemplationSection) return;
-    
-    images.forEach((img, index) => {
-        animateFloatingImage(img, index, contemplationSection);
-    });
-}
+function initCarousel() {
+    const images = document.querySelectorAll('.carousel-image');
+    const dots = document.querySelectorAll('.dot');
 
-function animateFloatingImage(img, index, section) {
-    const isMobile = window.innerWidth <= 768;
-    const baseDelay = index * (isMobile ? 4000 : 6000);
-    
-    setTimeout(() => {
-        startFloatingCycle(img, section, isMobile);
-    }, baseDelay);
-}
+    if (!images.length || !dots.length) return;
 
-function startFloatingCycle(img, section, isMobile) {
-    function cycle() {
-        const sectionRect = section.getBoundingClientRect();
-        const imgWidth = isMobile ? 220 : 360;
-        const imgHeight = imgWidth * 0.67;
-        
-        const maxX = sectionRect.width - imgWidth;
-        const maxY = sectionRect.height - imgHeight;
-        
-        // Create edge bias - 90% chance to appear in outer 25% of space
-        const edgeZone = 0.2; // 20% from edges
-        let startX, startY;
-        
-        if (Math.random() < 0.9) {
-            // Appear near edges
-            if (Math.random() < 0.8) {
-                // Left or right edge
-                startX = Math.random() < 0.5 ? 
-                    Math.random() * (maxX * edgeZone) : 
-                    maxX - Math.random() * (maxX * edgeZone);
-                startY = Math.random() * maxY;
-            } else {
-                // Top or bottom edge
-                startX = Math.random() * maxX;
-                startY = Math.random() < 0.5 ? 
-                    Math.random() * (maxY * edgeZone) : 
-                    maxY - Math.random() * (maxY * edgeZone);
-            }
-        } else {
-            // 10% chance to appear anywhere
-            startX = Math.random() * maxX;
-            startY = Math.random() * maxY;
-        }
-        
-        const moveDistance = isMobile ? 30 : 60;
-        const moveAngle = Math.random() * Math.PI * 2;
-        const endX = startX + Math.cos(moveAngle) * moveDistance;
-        const endY = startY + Math.sin(moveAngle) * moveDistance;
-        
-        img.style.left = startX + 'px';
-        img.style.top = startY + 'px';
-        img.style.transform = 'translate(0, 0)';
-        img.style.transition = 'none';
-        img.classList.remove('visible');
-        
-        setTimeout(() => {
-            const cycleDuration = isMobile ? 8000 : 12000;
-            const fadeInDuration = isMobile ? 2000 : 3000;
-            const fadeOutDuration = isMobile ? 2000 : 3000;
-            
-            img.style.transition = `opacity ${fadeInDuration}ms ease-in-out, transform ${cycleDuration}ms ease-in-out`;
-            img.classList.add('visible');
-            img.style.transform = `translate(${endX - startX}px, ${endY - startY}px)`;
-            
-            setTimeout(() => {
-                img.style.transition = `opacity ${fadeOutDuration}ms ease-in-out`;
-                img.classList.remove('visible');
-            }, cycleDuration - fadeOutDuration);
-            
-            const totalCycleTime = cycleDuration + (isMobile ? 3000 : 5000);
-            setTimeout(() => {
-                cycle();
-            }, totalCycleTime);
-        }, 50);
+    let currentIndex = 0;
+    const intervalTime = 4000; // Change image every 4 seconds
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
     }
-    
-    cycle();
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    // Auto-advance carousel
+    let autoAdvance = setInterval(nextImage, intervalTime);
+
+    // Click handlers for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            showImage(currentIndex);
+            // Reset auto-advance timer
+            clearInterval(autoAdvance);
+            autoAdvance = setInterval(nextImage, intervalTime);
+        });
+    });
 }
