@@ -649,6 +649,10 @@ p {
     text-align: center;
 }
 
+.pricing-card p {
+    font-size: 1.2rem;
+}
+
 .pricing-card .badge {
     margin-bottom: var(--spacing-md);
 }
