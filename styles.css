@@ -162,6 +162,10 @@ p {
     transform: translateY(0);
 }
 
+.block-invitation .line {
+    font-size: 1.8rem;
+}
+
 .line.spacing-top {
     margin-top: var(--spacing-md);
 }
@@ -498,6 +502,20 @@ p {
 .block-contemplation .container {
     position: relative;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contemplation-card {
+    background: rgba(255, 255, 255, 0.55);
+    /* backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); */
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .block-contemplation .text-breathe {
@@ -506,6 +524,7 @@ p {
 
 .block-contemplation .line {
     color: #2c1a28;
+    text-shadow: none;
 }
 
 .line-after-break {
@@ -594,7 +613,11 @@ p {
     .line {
         font-size: 1.2rem;
     }
-    
+
+    .block-invitation .line {
+        font-size: 1.5rem;
+    }
+
     .line.emphasis {
         font-size: 1.3rem;
     }
@@ -618,6 +641,11 @@ p {
     .about-card {
         position: relative;
         top: 0;
+    }
+
+    .contemplation-card {
+        padding: var(--spacing-md);
+        max-width: 100%;
     }
 
     .contact-grid {
@@ -660,7 +688,11 @@ p {
     .line {
         font-size: 0.8rem;
     }
-    
+
+    .block-invitation .line {
+        font-size: 1rem;
+    }
+
     .welcome-text {
         font-size: 1rem;
     }
@@ -672,12 +704,17 @@ p {
     .topics-list li {
         font-size: 1.15rem;
     }
-    
+
+    .contemplation-card {
+        padding: var(--spacing-sm);
+        border-radius: 8px;
+    }
+
     .btn {
         padding: 1rem 2rem;
         font-size: 1.05rem;
     }
-    
+
     .card-inner h2 {
         font-size: 1.5rem;
     }
