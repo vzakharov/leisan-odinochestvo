@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a single-page landing site for an online self-discovery group focused on the theme of loneliness ("Один или просто не встречен"). The site is built with vanilla HTML, CSS, and JavaScript - no build tools or frameworks required.
+This is a single-page landing site for an online self-discovery group focused on the theme of loneliness ("Один — или просто не встречен?"). The site is built with vanilla HTML, CSS, and JavaScript - no build tools or frameworks required.
 
 **Key characteristics:**
 - Static site with no dependencies or package managers
