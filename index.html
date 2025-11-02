@@ -86,10 +86,22 @@
                     <div class="contemplation-grid">
                         <div class="contemplation-carousel">
                             <div class="carousel-images">
-                                <img src="images/loneliness-quiet-vertical.png" class="carousel-image active" alt="Тихое одиночество">
-                                <img src="images/loneliness-heavy-vertical.png" class="carousel-image" alt="Тяжёлое одиночество">
-                                <img src="images/loneliness-clear-vertical.png" class="carousel-image" alt="Ясное одиночество">
-                                <img src="images/loneliness-boundless-vertical.png" class="carousel-image" alt="Глубокое одиночество">
+                                <picture class="carousel-image active">
+                                    <source media="(min-width: 768px)" srcset="images/loneliness-quiet-vertical.png">
+                                    <img src="images/loneliness-quiet.png" alt="Тихое одиночество">
+                                </picture>
+                                <picture class="carousel-image">
+                                    <source media="(min-width: 768px)" srcset="images/loneliness-heavy-vertical.png">
+                                    <img src="images/loneliness-heavy.png" alt="Тяжёлое одиночество">
+                                </picture>
+                                <picture class="carousel-image">
+                                    <source media="(min-width: 768px)" srcset="images/loneliness-clear-vertical.png">
+                                    <img src="images/loneliness-clear.png" alt="Ясное одиночество">
+                                </picture>
+                                <picture class="carousel-image">
+                                    <source media="(min-width: 768px)" srcset="images/loneliness-boundless-vertical.png">
+                                    <img src="images/loneliness-boundless.png" alt="Глубокое одиночество">
+                                </picture>
                             </div>
                             <div class="carousel-dots">
                                 <span class="dot active" data-index="0"></span>
@@ -154,7 +166,7 @@
                         <div class="card pricing-card">
                             <div class="badge">
                                 <span class="badge-dot"></span>
-                                Старт: ноябрь 2025
+                                Старт: декабрь 2025
                             </div>
                             <h2>Цена и запись</h2>
                             <div class="pricing">

@@ -197,7 +197,7 @@ p {
     background: rgba(199, 122, 54, 0.1);
     border: 1px solid var(--color-stroke);
     border-radius: 999px;
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     font-weight: 500;
     color: var(--color-brand);
 }
@@ -525,9 +525,15 @@ p {
     height: 100%;
     margin: 0;
     padding: 0;
-    object-fit: cover;
     opacity: 0;
     transition: opacity 3s ease-in-out;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .carousel-image.active {
@@ -608,7 +614,7 @@ p {
 .topics-layout {
     display: grid;
     grid-template-columns: 1fr 400px;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     align-items: start;
 }
 
@@ -823,8 +829,17 @@ p {
         min-height: auto;
     }
 
+    .contemplation-carousel {
+        order: -1;
+        display: flex;
+        flex-direction: column;
+    }
+
     .carousel-images {
-        max-width: 300px;
+        max-width: 100%;
+        height: 250px;
+        flex: 0 0 250px;
+        border-radius: 16px 16px 0 0;
     }
 
     .contemplation-text {
@@ -920,8 +935,19 @@ p {
     }
 
     .contemplation-card {
-        padding: var(--spacing-sm);
+        padding: 0;
         border-radius: 8px;
+    }
+
+    .carousel-images {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .carousel-dots {
+        position: relative;
+        bottom: auto;
+        padding: var(--spacing-sm);
+        background: transparent;
     }
 
     .btn {
