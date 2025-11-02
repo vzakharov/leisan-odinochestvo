@@ -412,7 +412,7 @@ p {
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 320px;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     align-items: start;
 }
 
@@ -806,7 +806,7 @@ p {
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-md);
     }
 
     .about-card {
