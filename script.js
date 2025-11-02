@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     checkResetFlag();
+    initFacilitatorOrder();
     initAnimations();
     initCarousel();
 });
@@ -8,6 +9,23 @@ function checkResetFlag() {
     if (window.location.hash === '#reset') {
         localStorage.removeItem('animationsShown');
         history.replaceState(null, null, ' ');
+    }
+}
+
+function initFacilitatorOrder() {
+    const facilitatorsGrid = document.querySelector('.facilitators-grid');
+    if (!facilitatorsGrid) return;
+
+    const facilitators = facilitatorsGrid.querySelectorAll('.facilitator');
+    if (facilitators.length !== 2) return;
+
+    // Flip a coin to decide order on each page load
+    const shouldReverse = Math.random() < 0.5;
+
+    // Reorder DOM elements if needed
+    if (shouldReverse) {
+        // Move the second facilitator before the first one
+        facilitatorsGrid.insertBefore(facilitators[1], facilitators[0]);
     }
 }
 

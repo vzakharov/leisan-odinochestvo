@@ -182,7 +182,6 @@ p {
 }
 
 .card-item {
-    font-size: 0.9rem;
     margin: 0.8rem 0;
     font-family: var(--font-primary);
     text-align: center;
@@ -578,7 +577,7 @@ p {
 .block-contemplation .line {
     color: var(--color-text-primary);
     text-shadow: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 /* Block 4: Topics */
@@ -734,8 +733,14 @@ p {
     color: var(--color-text-primary);
 }
 
-.facilitator-name strong {
+.facilitator-name a {
     color: var(--color-brand);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.facilitator-name a:hover {
+    opacity: 0.8;
 }
 
 .facilitator-bio {
@@ -867,23 +872,51 @@ p {
     }
 
     .line {
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
 
     .block-invitation .line {
+        font-size: 1.8rem;
+    }
+
+    .block-contemplation .line {
+        font-size: 1rem;
+    }
+
+    .line.emphasis {
+        font-size: 1.2rem;
+    }
+
+    .line.indent {
         font-size: 1rem;
     }
 
     .welcome-text {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .about-section p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .topic-card p {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
+    }
+
+    .card-item {
+        font-size: 1rem;
+    }
+
+    .themes-list li {
+        font-size: 1rem;
+    }
+
+    .price-item {
+        font-size: 1.15rem;
+    }
+
+    .facilitator-bio {
+        font-size: 1.15rem;
     }
 
     .contemplation-card {
