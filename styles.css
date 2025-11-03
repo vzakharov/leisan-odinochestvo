@@ -820,7 +820,11 @@ p {
 
 .block-echo .line {
     color: var(--color-text-primary);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+}
+
+.block-echo a {
+    font-size: 1.8rem;
 }
 
 /* ========================================
@@ -897,7 +901,7 @@ p {
     }
 
     .block-contemplation .line {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .topics-grid {
@@ -950,7 +954,7 @@ p {
     } */
 
     .block-contemplation .line {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     .line.emphasis {
@@ -966,7 +970,7 @@ p {
     }
 
     .about-section p {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
 
     .topic-card p {
@@ -982,7 +986,7 @@ p {
     }
 
     .topics-list-mobile li {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
 
     /* .card-item {
