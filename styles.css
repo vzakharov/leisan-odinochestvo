@@ -152,7 +152,6 @@ p {
 }
 
 .card-description {
-    font-size: 1rem;
     line-height: 1.6;
     color: var(--color-text-secondary);
 }
@@ -472,7 +471,7 @@ p {
 }
 
 .about-card .card-description {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding-bottom: 2rem;
 }
 
@@ -687,7 +686,7 @@ p {
 
 .price-highlight {
     color: var(--color-brand);
-    font-size: 1.3rem;
+    font-size: 1.8rem;
 }
 
 .whatsapp-link {
@@ -756,6 +755,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: var(--spacing-md);
 }
 
 .facilitator-photo {
@@ -791,7 +791,7 @@ p {
 }
 
 .facilitator-bio {
-    font-size: 1.05rem;
+    /* font-size: 1.05rem; */
     line-height: 1.7;
     color: var(--color-text-light);
     font-family: var(--font-primary);
@@ -826,9 +826,9 @@ p {
 }
 
 @media (max-width: 768px) {
-    body {
+    /* body {
         font-size: 16px;
-    }
+    } */
 
     .line {
         font-size: 1.2rem;
@@ -975,9 +975,9 @@ p {
         font-size: 1.1rem;
     }
 
-    .card-item {
+    /* .card-item {
         font-size: 1rem;
-    }
+    } */
 
     .themes-list li {
         font-size: 1rem;
@@ -987,9 +987,9 @@ p {
         font-size: 1.15rem;
     }
 
-    .facilitator-bio {
+    /* .facilitator-bio {
         font-size: 1.15rem;
-    }
+    } */
 
     .contemplation-card {
         padding: 0;
