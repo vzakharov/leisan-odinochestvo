@@ -827,6 +827,17 @@ p {
     font-size: 1.8rem;
 }
 
+.block-echo .btn-primary {
+    background-color: var(--color-brand-light);
+    padding: 0.5rem 2rem;
+}
+
+.block-echo .btn-primary:hover {
+    background-color: #c4956a;
+    transform: translateY(-1px);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* ========================================
    6. RESPONSIVE DESIGN
    ======================================== */
