@@ -690,6 +690,47 @@ p {
     font-size: 1.3rem;
 }
 
+.whatsapp-link {
+    color: #999;
+    margin-top: 0.5rem !important;
+}
+
+.whatsapp-link a {
+    color: #999;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.whatsapp-link a:hover {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+}
+
+.topics-list-mobile {
+    display: none;
+}
+
+.topics-list-mobile ul {
+    list-style-position: outside;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.topics-list-mobile li {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.topics-list-mobile li:last-child {
+    margin-bottom: 0;
+}
+
+.topics-list-mobile strong {
+    color: var(--color-brand);
+}
+
 /* Block 5: Facilitators */
 .block-facilitators {
     background: linear-gradient(180deg,
@@ -886,13 +927,17 @@ p {
         font-size: 1.3rem;
     }
 
+    .card {
+        padding: var(--spacing-md);
+    }
+
     .line {
         font-size: 1.1rem;
     }
 
-    .block-invitation .line {
-        font-size: 1.8rem;
-    }
+    /* .block-invitation .line {
+        font-size: 1.5rem;
+    } */
 
     .block-contemplation .line {
         font-size: 1rem;
@@ -915,6 +960,18 @@ p {
     }
 
     .topic-card p {
+        font-size: 1.1rem;
+    }
+
+    .topics-grid {
+        display: none;
+    }
+
+    .topics-list-mobile {
+        display: block;
+    }
+
+    .topics-list-mobile li {
         font-size: 1.1rem;
     }
 
